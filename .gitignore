@@ -1,0 +1,16 @@
+node_modules
+.next
+.env.local
+.env*.local
+
+.DS_Store
+dist
+build
+.vercel
+
+Add-Content .gitignore "`n.env.local`n.env*.local`ntsconfig.tsbuildinfo`n.next`nnode_modules"
+.env.local
+.env*.local
+tsconfig.tsbuildinfo
+.next
+node_modules

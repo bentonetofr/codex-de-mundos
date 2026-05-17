@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Nunito:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --void-950: #05050a;
+  --void-900: #0a0a12;
+  --void-800: #0f0f1a;
+  --void-700: #141422;
+  --void-600: #1a1a2e;
+  --void-500: #20203a;
+  --amber: #c9a84c;
+  --amber-light: #e0c16a;
+  --amber-dark: #a07c2e;
+  --amber-glow: rgba(201,168,76,0.15);
+  --rune: #7b5ea7;
+  --ash-50: #f0eefa;
+  --ash-200: #c4bfe8;
+  --ash-500: #6b6a80;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--void-950);
+  color: var(--ash-50);
+  font-family: 'Nunito', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  /* subtle grain overlay */
+  background-image: 
+    radial-gradient(ellipse at 20% 0%, rgba(123,94,167,0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 100%, rgba(201,168,76,0.06) 0%, transparent 50%);
+}
+
+/* Scrollbar customizada */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--void-900);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--void-500);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--amber-dark);
+}
+
+/* Seleção de texto */
+::selection {
+  background: rgba(201,168,76,0.25);
+  color: var(--amber-light);
+}
+
+/* Títulos com fonte Cinzel */
+h1, h2, h3 {
+  font-family: 'Cinzel', Georgia, serif;
+  letter-spacing: 0.02em;
+}
+
+/* Focus ring customizado */
+:focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: 2px;
+}
+
+/* Transições globais */
+a, button {
+  transition: all 0.2s ease;
+}
+
+/* Divisor dourado decorativo */
+.divider-rune {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--amber);
+  opacity: 0.4;
+}
+.divider-rune::before,
+.divider-rune::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--amber), transparent);
+}
+
+/* Card hover glow */
+.card-hover {
+  transition: all 0.25s ease;
+}
+.card-hover:hover {
+  box-shadow: 0 0 30px rgba(201,168,76,0.12), 0 8px 32px rgba(0,0,0,0.4);
+  border-color: rgba(201,168,76,0.3) !important;
+  transform: translateY(-2px);
+}
+
+/* Sidebar ativa */
+.nav-active {
+  background: rgba(201,168,76,0.1);
+  border-right: 2px solid var(--amber);
+  color: var(--amber);
+}
+
+/* Textarea e inputs sem resize azul */
+textarea, input, select {
+  color-scheme: dark;
+}
+
+/* Animação de entrada em cascata */
+.stagger-1 { animation-delay: 0.05s; }
+.stagger-2 { animation-delay: 0.1s; }
+.stagger-3 { animation-delay: 0.15s; }
+.stagger-4 { animation-delay: 0.2s; }
+.stagger-5 { animation-delay: 0.25s; }
+.stagger-6 { animation-delay: 0.3s; }
+
+/* Toast customizado */
+.toast-dark {
+  background: var(--void-700) !important;
+  color: var(--ash-50) !important;
+  border: 1px solid rgba(201,168,76,0.2) !important;
+}
